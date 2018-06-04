@@ -1,0 +1,167 @@
+#include <chrono>
+#include <cstdlib>
+#include <initializer_list>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+/* Exercise 1 Questions:
+ *
+ * 1. a) I chose values 10000, 40000, 80000, 100000, 200000, 500000, 800000
+ *       as they were 3 values above a below the base value giving me a range of trails
+ *
+ *    b) See graph.png
+ *
+ *    c) My graph does conform with my expatiation's, we used a linear method with an
+ *       approx run time of O(n) which created a linear graph to find the largest number
+ *       The run time for find value was approx the same each time as this value is usually
+ *       near the middle of the vector
+ *
+ */
+
+
+
+class IntegerArray
+{
+public:
+	IntegerArray()
+	{
+	}
+
+	IntegerArray(std::initializer_list<int> init)
+		: values_(init)
+	{
+	}
+
+	IntegerArray(std::vector<int>&& v)
+		: values_(std::move(v))
+	{
+	}
+
+	std::vector<int>::const_iterator begin() const
+	{
+		return values_.begin();
+	}
+
+	std::vector<int>::const_iterator end() const
+	{
+		return values_.end();
+	}
+
+    /**
+	* Insert value `v` at position `pos` within the array.
+	*/
+    std::vector<int>::iterator insert(int v, size_t pos)
+    {
+        values_.push_back(v);
+        for(int i = 0; i < (int)values_.size() - pos - 1; i++) //move number from pos to end of vector until v is in pos
+        {
+            int num = values_.at(pos); //check what number is currently at desired position
+            values_.push_back(num); //add number at desired position to back of vector
+            values_.erase(values_.begin() + pos); //erase number from current position so next number can take its place
+        }
+
+    }
+
+	IntegerArray& operator << (int n)
+	{
+		values_.push_back(n);
+		return *this;
+	}
+
+	size_t size() const
+	{
+		return values_.size();
+	}
+
+private:
+	std::vector<int> values_;
+};
+
+std::ostream& operator << (std::ostream&, const IntegerArray&);
+
+
+
+int main()
+{
+	cout << "Hello, world!\n";
+
+	IntegerArray a = { 1, 2, 3, 4, 5, 6 };
+	cout << a;
+
+	IntegerArray b;
+	constexpr size_t WorkingSize = 800000;
+
+	// Initialize random number generator:
+	srand(time(NULL));
+
+	for (int i = 0; i < WorkingSize; i++)
+	{
+		b << (rand() % WorkingSize);
+	}
+
+	//
+	// Find an arbitrary number:
+	//
+	bool foundIt = false;
+	int index = 0;
+
+	auto start = std::chrono::high_resolution_clock::now();
+	for (int value : b)
+	{
+		if (value == 42)
+		{
+			foundIt = true;
+			break;
+		}
+
+		index++;
+	}
+	auto end = std::chrono::high_resolution_clock::now();
+
+	if (foundIt)
+	{
+		cout << "found the value 42 at index " << index;
+	}
+	else
+	{
+		cout << "42 is not in the IntegerArray b";
+	}
+
+	cout << " (took " << (end - start).count() << " µs)\n";
+
+	//
+	// Find the largest number:
+	//
+	start = std::chrono::high_resolution_clock::now();
+	int largest = 0;
+	for (auto i = b.begin(); i != b.end(); i++)
+	{
+		if (*i > largest)
+		{
+			largest = *i;
+		}
+	}
+	end = std::chrono::high_resolution_clock::now();
+
+	cout << "the largest value is: " << largest
+	     << " (took " << (end - start).count() << " µs)\n";
+
+    a.insert(9, 3);
+    cout << a;
+
+	return 0;
+}
+
+
+std::ostream& operator << (std::ostream& o, const IntegerArray& a)
+{
+	o << "[";
+	for (int i : a)
+	{
+		o << " " << i;
+	}
+	o << " ]\n";
+
+	return o;
+}

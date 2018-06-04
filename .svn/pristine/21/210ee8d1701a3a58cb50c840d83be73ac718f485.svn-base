@@ -1,0 +1,403 @@
+/*
+ * Copyright 2018 Jonathan Anderson
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <iostream>
+#include <cstdint>
+
+using namespace std;
+
+
+template<typename T>
+class List
+{
+public:
+    class Node //holds node values
+
+    {
+    public:
+        Node(Node *nex_, T key_)
+            {
+            nex = nex_;
+            key = key_;
+        }
+
+        Node* get_nex()
+        {
+            return nex;
+        }
+
+        T& get_key()
+        {
+            return key;
+        }
+
+        void write_key(T newKey)
+        {
+            key = newKey;
+        }
+
+        void write_nex(Node* newNex)
+        {
+            nex = newNex;
+        }
+
+    private:
+        Node *nex;
+        T key;
+    };
+    //! A constant iterator over elements of the List.
+    class const_iterator
+    {
+    public:
+        const_iterator(Node *ptr) //itr of node
+        {
+            itr = ptr;
+        }
+
+        /**
+         * The dereference operator.
+         *
+         * @returns   a reference to the "current" element
+         */
+        const T& operator*() 
+        {
+            return this->itr->get_key();
+        }
+
+        /**
+         * Pre-increment operator (i.e., `++i`).
+         *
+         * This method increments the iterator and then returns a
+         * reference to the newly-incremented iterator.
+         *
+         * @returns   a reference to this iterator, after incrementing
+         */
+        const_iterator& operator++()
+        {
+            itr = itr->get_nex();
+            return *this;
+        }
+
+        /**
+         * Post-increment operator (i.e., `i++`).
+         *
+         * This method returns a copy of this iterator as it currently
+         * is (i.e., pointing where it currently points) and _then_
+         * increments itself.
+         *
+         * @param     ignored   this is only used to distinguish the two
+         *                      increment operators (pre- and post-)
+         *                      from each other: its value should be
+         *                      ignored
+         *
+         * @returns   an iterator to the previously-current element
+         */
+        const_iterator operator++(int ignored)
+        {
+            Node *prevNode = itr;
+            itr =  itr->get_nex(); //get itr of next node
+            return prevNode;
+        }
+
+        //! Is this iterator pointing at the same place as another one?
+        bool operator== (const const_iterator& otherItr) const
+        {
+            return itr == otherItr.itr;
+        }
+
+        //! Is this iterator pointing at a different place from another?
+        bool operator!= (const const_iterator& otherItr) const
+        {
+            return itr != otherItr.itr;
+        }
+    protected:
+        Node* itr;
+
+    };
+
+    //! A mutable version of const_iterator (can modify list values)
+    class iterator : public const_iterator
+    {
+    public:
+        iterator(Node* ptr):const_iterator(ptr)
+        {}
+
+        // Non-const overloads of const_iterator methods:
+        T& operator*()
+        {
+            return this->itr->get_key();
+        }
+        iterator& operator++()
+        {
+            this->itr = this->itr->get_nex(); 
+            return *this;
+        }
+        iterator operator++(int ignored)
+        {
+            Node *prevNode = this->itr;
+            this->itr =  this->itr->get_nex();
+            return prevNode;
+        }
+
+        Node* get_node()
+        {
+            return this->itr;
+        }
+    };
+
+
+    //! Default constructor
+    List()
+    {
+        tail = new Node(nullptr, 69); //these 69s are a last minute hack so it works
+        head = new Node(tail, 69);
+    }
+
+
+    //! Copy constructor
+    List(const List& otherList)
+    {
+        head = otherList.head;
+        tail = otherList.tail;
+    }
+
+    //! Move constructor
+    List(List&& otherList)
+    {
+        head = otherList.head;
+        tail = otherList.tail;
+    }
+
+    //! Destructor
+    ~List()
+    {
+        Node *currentNode = head;
+        while(currentNode != tail)
+        {
+            Node *nextNode = currentNode->get_nex();
+            delete currentNode;
+            currentNode = nextNode;
+        }
+    }
+
+    //! Copy assignment operator
+    List& operator= (const List& otherList)
+    {
+        Node *myListLocation = begin()->get_nex(); //get start
+        Node *otherListLocation = otherList.begin();
+        while(myListLocation != end())
+        {
+            myListLocation = myListLocation->get_nex(); //delete each value 1 by 1
+            delete myListLocation;
+        }
+        while(otherListLocation != end())
+        {
+            push_back(otherListLocation->get_key()); //push back values to match new list
+            otherListLocation = otherListLocation->get_nex();
+        }
+    }
+
+    //! Move assignment operator
+    List& operator= (List&& otherList)
+    {
+        Node *myListLocation = begin()->get_nex();
+        Node *otherListLocation = otherList.begin();
+        while(myListLocation != end())
+        {
+            myListLocation = myListLocation->get_nex(); //delete each value 1 by 1
+            delete myListLocation;
+        }
+        while(otherListLocation != end())
+        {
+            push_back(otherListLocation->get_key()); //push back values to match new list
+            otherListLocation = otherListLocation->get_nex();
+        }
+        delete otherList;
+    }
+
+
+    //.;
+    // Accessors:
+    //
+    //! How many elements are in this list?
+    size_t size() const
+    {
+        std::size_t nodeCount = 0;
+        Node* currentNode = this->head;
+        while(currentNode != nullptr) //itratote through list and count values
+        {
+            currentNode = currentNode->get_nex();
+            nodeCount++;
+        }
+        return nodeCount;
+    }
+
+    //! Is this list empty?
+    bool empty() const
+    {
+        if(size() < 1)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    //! Get an iterator to the beginning of the list
+    iterator begin()
+    {
+        return iterator(head);
+    }
+    const_iterator begin() const
+    {
+        return iterator(head);
+    }
+
+    //! Get an iterator just past the end of the list
+    iterator end()
+    {
+        return iterator(tail++);
+    }
+    const_iterator end() const
+    {
+        Node *a = tail;
+        return iterator(a++);
+    }
+
+
+    //
+    // Mutators:
+    //
+    //! Copy an element to the front of the list
+    void push_front(const T& data)
+    {
+        if(head->get_key() == 69)
+        {
+            head->write_key(data);
+        }
+        Node *newHead = new Node(head, data);
+        head = newHead;
+    }
+
+    //! Move an element to the front of the list
+    void push_front(T&& data)
+    {
+        if(head->get_key() == 69)
+        {
+            head->write_key(data);
+        }
+        Node *newHead = new Node(head, std::move(data));
+        head = newHead;
+    }
+
+    //! Copy an element to the back of the list
+    void push_back(const T& data)
+    {
+        if(tail->get_key() == 69)
+        {
+            tail->write_key(data);
+        }
+        else
+        {
+            Node *newNode = new Node(nullptr, data);
+            tail->write_nex(newNode);
+            tail = newNode;
+        }
+    }
+
+    //! Move an element to the back of the list
+    void push_back(T&& data)
+    {
+        if(tail->get_key() == 69)
+        {
+            tail->write_key(data);
+        }
+        else
+        {
+            iterator i = begin();
+            while(i.get_node()->get_nex() != tail)
+            {
+                i++;
+            }
+            Node *newNode = new Node(tail, tail->get_key());
+            i.get_node()->write_nex(newNode);
+            tail->write_key(data);
+        }
+    }
+
+    /**
+     * Copy an element into an arbitrary location.
+     *
+     * This method makes a copy of an element and inserts that copy into a
+     * location pointed at by the given iterator. After insertion into a
+     * list of n elements, the list should contain n+1 elements (i.e., no
+     * existing element should be replaced).
+     *
+     * @returns   an iterator pointing at the newly-inserted element
+     */
+    iterator insert(iterator currentItr, const T& data)
+    {
+        iterator beginItr = ++currentItr;
+        Node *nextNode = currentItr.get_node();
+        Node *currentNode = currentItr.get_node();
+        T currentNodeData = currentNode->get_key();
+        Node *newNode = new Node(nextNode, currentNodeData);
+        currentNode->write_key(nextNode);
+        currentNode->write_nex(data);
+    }
+
+    /**
+     * Move an element into an arbitrary location.
+     *
+     * This method inserts an element into a location pointed at by the
+     * given iterator, using move semantics to avoid copies. After insertion
+     * into a list of n elements, the list should contain n+1 elements
+     * (i.e., no existing element should be replaced).
+     *
+     * @returns   an iterator pointing at the newly-inserted element
+     */
+    iterator insert(iterator currentItr, const T&& data)
+    {
+        iterator nextItr = currentItr++;
+        Node *nextNode = nextItr.get_node();
+        Node *currentNode = currentItr.get_node();
+        T currentNodeData = currentNode->get_key();
+        Node *newNode = new Node(nextNode, currentNodeData);
+        currentNode->write_key(nextNode);
+        currentNode->write_nex(data);
+        delete currentItr.get_node();
+        delete data;
+        delete currentItr;
+        currentItr = nullptr;
+    }
+
+    //! Remove an element from an arbitrary location
+    void erase(iterator itr)
+    {
+        Node *currentNode = itr.get_node();
+        Node *nextNode = currentNode->get_nex();
+        itr.get_node()->write_key(nextNode->get_key());
+        itr.get_node()->write_nex(nextNode->get_nex());
+        delete nextNode->get_nex();
+        nextNode->write_nex(nullptr);
+        delete &itr;
+        itr = nullptr;
+    }
+
+protected:
+    // Add whatever you need to add here
+    Node* head;
+    Node* tail;
+};
