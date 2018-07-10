@@ -104,3 +104,5 @@ Iter partition(const Iter& begin, const Iter& end)
 	std::iter_swap(begin, i - 1);
 	return i;
 }
+
+
