@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+
+<!-- Page 4 -->
+<svg x="0" y="0" width="935" height="1210" viewBox="0 0 935 1210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+style="display: block;margin-left: auto;margin-right: auto;">
+<defs>
+
+<style type="text/css"><![CDATA[
+text { white-space: pre; }
+path, image { pointer-events: none; }
+
+.s1_4{
+font-size: 16.87px;
+font-family: Calibri_9z;
+fill: #000000;
+}
+.s2_4{
+font-size: 16.87px;
+font-family: Montserrat-Bold_22;
+fill: #000000;
+}
+.s3_4{
+font-size: 16.87px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+.s4_4{
+font-size: 13.75px;
+font-family: Montserrat-Bold_22;
+fill: #000000;
+}
+.s5_4{
+font-size: 13.75px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+
+.g0_4{
+fill: #FFFFFF;
+}
+
+]]></style>
+
+</defs>
+<path d="M0,0
+L0,1210
+L935,1210
+L935,0 Z " 
+fill="#FFFFFF" stroke="none" />
+<text x="463" y="1130" dx="0,-0.1" class="s1_4">2 </text>
+<text x="109" y="126" dx="0,0,0.1,0,0.1,-0.2,0.1,0,-0.1,0,0.1,-0.2,0.1" class="s2_4">Introduction </text>
+<text x="110" y="169" dx="0,0,-0.1,0.1,0,0.1,-0.1,-0.2,0.1,0,-0.1,-0.1,0,0.1,-0.2,0.1,0,0,-0.1,-0.1,0,0,0,-0.2,0.1,-0.1,0.1,0,-0.1,0,-0.1,0,0,-0.1,0.1,0,-0.1,0.1,-0.1,-0.1,-0.1,0,0,-0.1,-0.1,0.1,-0.2,0.1,-0.1,0,0.1,0,0,-0.3,0.1,0,0,0,-0.1,-0.2,0,-0.1,-0.1,-0.1,0,-0.1,0,0,-0.1,0.1,0.1,-0.3,0.1,-0.1,0,-0.1,0.1,0,0,0,0" class="s3_4">The objective of this report is to detail the major design changes needed to fix </text>
+<text x="110" y="189" dx="0,-0.1,0,0,0,0,-0.1,-0.1,0.1,-0.1,-0.1,0,0,0,-0.1,0,0,0,-0.1,0.1,-0.1,-0.1,0,-0.2,0.1,0,0,-0.1,0,0,-0.1,0,0,-0.1,-0.1,-0.1,0.1,0,-0.1,0.1,0,-0.1,-0.1,0,0,0,-0.2,-0.1,0.1,0,0,0.1,-0.3,0,0,-0.2,0.1,-0.1,0,-0.1,0.1,0,-0.1,0,-0.1,0.1,-0.1,-0.1,-0.1" class="s3_4">assignment 1 (List.h) so it was able to pass the required test code. </text>
+<text x="110" y="228" dx="0,-0.1,0,0.1,-0.2" class="s2_4">Node </text>
+<text x="110" y="272" dx="0,0,-0.1,0.1,0,0,0,-0.2,0,-0.1,0,0.1,-0.1,0,-0.1,0,0,-0.1,0.1,-0.2,0,0,-0.1,-0.2,0,-0.1,-0.1,-0.1,0,0.1,0,-0.1,0.1,0,-0.1,-0.2,0.1,0,-0.1,0.1,-0.1,0.1,0,-0.2,0,-0.1,0,0,0,0,-0.1,0,0,-0.1,-0.1,0.1,0,-0.1,-0.1,-0.1,0,-0.1,-0.1,0.1,-0.1,-0.2,0.1,0,0,-0.1,0,0.1,-0.1,-0.2,0.1,0,0.1,0,-0.2,0,-0.1,0,-0.1" class="s3_4">The first major design change to the Node Class was the addition of a ‘prev’ field </text>
+<text x="110" y="293" dx="0,0,-0.1,0,0,-0.1,0,-0.1,-0.1,0,-0.1,-0.1,0.1,-0.1,0,-0.1,0.1,0,-0.1,-0.2,0.1,-0.2,-0.1,0,0.1,0,-0.1,0.1,0,0,0,-0.2,0.1,-0.1,-0.1,0.1,0,0,-0.1,-0.1,0,0,0,-0.2,-0.1,-0.1,0,0.1,-0.1,0,-0.1,-0.1,0.1,0,0,0,0,-0.1,0,-0.1,0.1,0,-0.3,0.1,0,-0.1,-0.2,-0.1,0.1,0,-0.1,0,0.1,-0.2,0,0,-0.1,-0.2,0.1,-0.1,0,0,0,0,-0.1" class="s3_4">which pointed to the previous node. This changed the List to be a double linked list </text>
+<text x="110" y="313" dx="0,0.1,-0.1,0,-0.1,0.1,-0.1,-0.1,0,0.1,0,0,-0.2,0.1,-0.1,0,0.1,0,-0.2,0.1,0.1,-0.1,-0.1,-0.1,-0.1,0,0.1,0.1,0,-0.1,0.1,0,0,-0.1,-0.1,0,0.1,0,-0.1,-0.1,-0.1,0,0,0,-0.1,-0.1,-0.2,0,0.1,0,-0.2,0.1,0,0,-0.1,0,-0.1,-0.1,-0.1,0,0,-0.1,-0.1,0.1,-0.2,0.1,-0.1,-0.1,0.1,0,0,0,-0.1,-0.1,-0.1" class="s3_4">instead of singly linked list. While this change would add some memory and </text>
+<text x="110" y="334" dx="0,0,-0.1,0.1,-0.1,0.1,-0.1,0,-0.1,-0.1,0.1,0.1,-0.1,0,-0.1,0.1,0,-0.1,-0.2,0.1,0,-0.1,0.1,-0.1,0.1,0,0,0.1,-0.1,-0.2,0,0,0,-0.1,0,0,-0.1,0,0,-0.3,0.1,-0.1,-0.1,0.1,-0.1,0,-0.1,-0.1,-0.1,0,0.1,-0.1,0,0,-0.1,-0.2,0.1,0,-0.1,0,0,0,-0.1,0,0,-0.2,0.1,-0.1,-0.1,0,0,0,0,-0.1,0.1,-0.1,-0.1,0,0,-0.1,0.1,-0.1" class="s3_4">complication to the Node Class it was deemed appropriate as it greatly simplified </text>
+<text x="110" y="354" dx="0,0.1,-0.1,-0.1,0,0,0.1,-0.1,-0.2,0.1,0,-0.2,0.1,0.1,-0.1,-0.2,0.1,-0.1,0,-0.2,0,0,-0.1,0.1,-0.2,0,-0.1,0,-0.1,0,-0.1,-0.1,-0.1,0,-0.1,-0.1,-0.1,0,0.1,0,-0.1,0,0.1,-0.2,-0.1,0.1" class="s3_4">many other methods like insert() and erase(). </text>
+<text x="110" y="396" dx="0,0,-0.1,0.1,0,0.1,-0.2,0,0,0,-0.3,0.1,0,0,0,-0.1,0,0,-0.1,-0.1,-0.2,0,0.1,0,0.1,-0.1,-0.3,0.1,0,-0.1,0.1,0,-0.1,-0.1,0.1,-0.2,0,0.1,-0.3,0.1,-0.2,0,0,-0.1,0,0,0,0,-0.1,0,0,-0.2,-0.1,0.1,-0.1,0,0,-0.1,0,0,-0.2,-0.1,0.1,0,-0.1,0,0,0,-0.1,-0.2,0.1" class="s3_4">The only design change made to the Node Class was removing the private </text>
+<text x="110" y="416" dx="0,-0.1,0.1,0,0,-0.1,0,-0.1,-0.1,-0.1,0.1,-0.1,0.1,-0.2,0,0,0,-0.2,0.1,0.1,-0.1,-0.2,-0.1,-0.1,0,-0.1,0,0,0,-0.2,0.1,0,0,0,-0.1,-0.1,-0.1,0,0,0.1,0,-0.1,-0.1,0.1,-0.2,-0.1,0,0,0,0,-0.1,-0.1,0,-0.2,0,0.1,-0.3,0.1,0,-0.1,-0.1,-0.1,0,0.1,-0.1,-0.2,0,0,-0.1,0.1,-0.1,-0.1,0.1,-0.1,0,0,0,-0.2,0.1,-0.1,0,-0.1,0.1" class="s3_4">declaration. As seen in Figure 0 and 1, the original Node had many methods used to </text>
+<text x="110" y="437" dx="0,-0.1,0,0,0.1,-0.2,0,0,-0.1,0,0,0,-0.1,-0.2,0.1,0,0,-0.1,0.1,0,-0.1,0,0,-0.2,-0.1,0,0,-0.1,0,0,-0.1,0,0,0,-0.1,-0.2,0.1,-0.1,0.1,0,0,-0.1,-0.2,-0.2,0.1,0,0,-0.1,0,-0.1,0.1,-0.1,-0.1,0,-0.1,-0.2,0.1,0,0,0,-0.1,0,-0.1,0,0,-0.2,-0.1,0,0.1,0,0,-0.1,-0.1,-0.1,-0.1,0.1,-0.1,0,-0.1,0.1,0,-0.3,0.1" class="s3_4">access private fields which was unnecessary, instead the fields were updated to be </text>
+<text x="110" y="457" dx="0,-0.1,0,-0.1,0,0,-0.1,-0.1" class="s3_4">public. </text>
+<text x="125" y="1049" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,0,0" class="s4_4">Figure 0:</text>
+<text x="192" y="1049" dx="0,0,0,0,-0.1,0,0,0,0,0.1,0,0,0,-0.1,0.1,0,0,0,0.1,0.1,0.1,0,0,0,0,0" class="s5_4">Original Node class which </text>
+<text x="124" y="1066" dx="0,0,0,0,0,-0.1,0,-0.1,0,0.1,0,-0.1,-0.1,0,0,-0.1,0.1,0.1,-0.1,0.1,-0.1,-0.1,0,0,0,0.1,0.1,-0.1,0,0,0.1,0,0,0,-0.1,0.1,0.1,0,0,-0.1" class="s5_4">included needless methods for accessing </text>
+<text x="124" y="1083" dx="0,0,0,0,0.1,0,-0.1,-0.1,0.1,-0.1,0,-0.1,0,0,0.1" class="s5_4">private fields.</text>
+<image preserveAspectRatio="none" x="464" y="499" width="295" height="266" xlink:href="4/img/1.png" />
+<path fill-rule="evenodd" d="M465.6,770.4H760.1v48.8H465.6V770.4Z" class="g0_4" />
+<text x="465" y="783" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,-0.1,-0.1" class="s4_4">Figure 1:</text>
+<text x="528" y="783" dx="0,0,-0.1,0,0.1,0,0,0,-0.1,0.1,0,0,0,0.1,-0.1,0.1,-0.2,0,0,-0.1,0,0,0,0,0,-0.1,0.1,-0.1,0,-0.1" class="s5_4">New Node Class containing the </text>
+<text x="465" y="800" dx="0,0,-0.1,0,0.1,0,0,-0.1,0.1,0.1,-0.1,0.1,0,0,0,0,0,0,0,0.1,0,0,0,0.1,-0.1,0,-0.1,0,0,-0.1,0,0.1,0.1,0,-0.1,0,0,0,-0.1,0.2" class="s5_4">new prev_ variable and entirely public. </text>
+<image preserveAspectRatio="none" x="125" y="502" width="252" height="522" xlink:href="4/img/2.png" />
+
+
+<!-- Any embedded fonts defined here -->
+<style type="text/css" ><![CDATA[
+
+@font-face {
+	font-family: Montserrat-Bold_22;
+	src: url("fonts/Montserrat-Bold_22.woff") format("woff");
+}
+
+@font-face {
+	font-family: Calibri_9z;
+	src: url("fonts/Calibri_9z.woff") format("woff");
+}
+
+@font-face {
+	font-family: Montserrat-Regular_a1;
+	src: url("fonts/Montserrat-Regular_a1.woff") format("woff");
+}
+
+]]></style>
+
+</svg>

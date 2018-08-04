@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+
+<!-- Page 7 -->
+<svg x="0" y="0" width="935" height="1210" viewBox="0 0 935 1210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+style="display: block;margin-left: auto;margin-right: auto;">
+<defs>
+
+<style type="text/css"><![CDATA[
+text { white-space: pre; }
+path, image { pointer-events: none; }
+
+.s1_7{
+font-size: 16.87px;
+font-family: Calibri_9z;
+fill: #000000;
+}
+.s2_7{
+font-size: 16.87px;
+font-family: Montserrat-Bold_22;
+fill: #000000;
+}
+.s3_7{
+font-size: 16.87px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+.s4_7{
+font-size: 13.75px;
+font-family: Montserrat-Bold_22;
+fill: #000000;
+}
+.s5_7{
+font-size: 13.75px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+.s6_7{
+font-size: 13.75px;
+font-family: Montserrat-BoldItalic_2t;
+fill: #000000;
+}
+.s7_7{
+font-size: 13.75px;
+font-family: Montserrat-Italic_2s;
+fill: #000000;
+}
+
+.g0_7{
+fill: #FFFFFF;
+}
+
+]]></style>
+
+</defs>
+<path d="M0,0
+L0,1210
+L935,1210
+L935,0 Z " 
+fill="#FFFFFF" stroke="none" />
+<text x="463" y="1130" dx="0,-0.1" class="s1_7">5 </text>
+<text x="109" y="126" dx="0,-0.1,0,0.1,0,0,0.1,0,-0.1,0,-0.2,0.1" class="s2_7">Constructors</text>
+<text x="110" y="166" dx="0,0,-0.1,0.1,0,-0.1,0,0.1,0,0.1,-0.1,-0.2,0.1,0,0,0,-0.3,0.1,0.1,0,-0.2,-0.1,0.1,-0.1,0,0.1,0,0,0,0.1,0,-0.2,0.1,-0.1,0,0,-0.1,-0.1,0,0,-0.1,0.1,-0.1,0,-0.2,0,0,0,-0.1,0,-0.1,0,0.1,0,-0.1,0,-0.2,0.1,0,-0.1,-0.1,0,-0.1,0,0,0,-0.1,-0.2,-0.1,-0.1,-0.1,0.1,0.1,-0.1,-0.1,0,-0.1,0.1,0,-0.2,0.1,-0.1,0.1,0,-0.2,0.1" class="s3_7">The original submission of List.h included a “last minute hack” in attempt to receive </text>
+<text x="110" y="187" dx="0,0,0.1,-0.1,0.1,0,-0.1,-0.1,0,-0.1,0,-0.1,0,-0.2,0.1,-0.1,0,-0.1,0,0,-0.2,-0.2,-0.1,0,0,-0.1,0,-0.1,0,-0.1,-0.1,0.1,-0.1,0,-0.2,0.1,0,-0.1,-0.1,0.1,-0.2,0,0,0,-0.2,0.1,0.1,-0.1,-0.2,0,-0.1,0,0,0,0,0,-0.2,0.1,0,-0.1,0.1,0,-0.1,-0.1,0.1,-0.2,0.1,0,-0.1,0,0.1,-0.1,-0.1,0.1,0,-0.1,0.1,-0.2,0.1" class="s3_7">some partial marks (which didn’t work). As seen in figure 8, the original move </text>
+<text x="110" y="207" dx="0,0,0.1,-0.1,0,-0.1,0,-0.2,0,-0.1,0.1,0,-0.2,0,-0.2,0.1,-0.1,-0.1,0.1,-0.1,0,-0.1,-0.1,0.1,0,-0.1,0.1,-0.1,-0.1,0,-0.1,-0.1,-0.1,0,-0.1,-0.1,0,0,0,0.1,0,0,-0.1,-0.2,0.1,0,0,0,0,-0.1,0,-0.1,-0.1,-0.1,0,0,-0.2,0,-0.1,0,-0.1,0,0,-0.2,0.1,-0.1,0,-0.1,-0.2,0.1,0.1,-0.2,0,0,-0.1,-0.1,0,-0.1,-0.1,0.1" class="s3_7">constructor created the head and tail of the list and initialized them with the </text>
+<text x="110" y="228" dx="0,-0.1,0,0.1,-0.1,-0.1,0,0,0,-0.2,0.1,0,0,-0.1,-0.1,0,-0.1,0,0,-0.2,0,0,0,-0.1,-0.1,0.1,0,-0.2,0.1,-0.2,0.1,0,0,0,-0.2,0,-0.1,-0.1,0.1,-0.1,0,-0.2,-0.1,-0.1,-0.1,0,-0.1,-0.1,0.1,0,0,0.1,0,-0.2,0.1,0,-0.1,0,-0.2,0.1,-0.1,-0.1,0,0,-0.2,-0.1,0.1,0.1,0.1,0,0,-0.1,-0.2,0,-0.1,0,0,0,-0.2,0.1,0,-0.1,-0.1,0,0,0,-0.1,0" class="s3_7">number 69, which was later over written with the correct head/ tail. Obviously, this is </text>
+<text x="110" y="248" dx="0,-0.1,0.1,-0.1,0,0,-0.1,0.1,-0.1,-0.1,0.1,0,-0.1,0,-0.1,-0.1,0.1,0,-0.2,0,0.1,-0.1,-0.1,-0.1,-0.1,0.1,0,0,-0.1,0.1,-0.3,0.1,0,0,0,-0.2,0.1,0,0.1,-0.1,0,-0.3,0.1,0,-0.2,0,0.1,-0.1,0.1,-0.2,0.1,0,0,-0.1,-0.1,0.1,-0.2,0.1,0,-0.2,0.1,-0.1,0.1,0,0,0,-0.2,0.1,0,0,-0.1,0,0,-0.1,-0.1,0,-0.1,0,-0.1,-0.1,0,0,-0.2,0,0" class="s3_7">not ideal, either sentinel nodes should be used, or these nodes should start at Null </text>
+<text x="110" y="269" dx="0,0,0.1,0.1,-0.1,-0.1,-0.1,0,0,0.1,-0.2,0,0,0,-0.2,0.1,-0.1,0.1,0.1,0,-0.1,-0.1,0.1,0,-0.2,0,-0.1,0,-0.1,-0.1,0.1,0,0,0,-0.2,0.1,-0.2,0.1,-0.1,0,0,-0.1,0,-0.2,0.1,-0.2,-0.1,-0.1,0.1,0,0.1,0.1,0,-0.1,0,-0.1,0.1,0,0,-0.1,-0.1,0.1,0,0,0.1,0,0,-0.2,0.1,0.1,0,-0.1,-0.2,-0.1,0.1,0,0,-0.1,0,0,-0.1,-0.1,-0.1,-0.1,0,0,-0.1,-0.1,-0.1,0.1,-0.1" class="s3_7">Pointers. As well, this strategy would cause the list to fail for all type T’s that cannot </text>
+<text x="110" y="289" dx="0,-0.1,0.1,0.1,-0.1,0,0,0,0,0,0.1,0.1,-0.2,0.1,0,0,-0.1,-0.2,0.1,-0.1,0,0,-0.1,0.1,-0.2,-0.1,-0.1,0.1,0,0,-0.1,-0.1,-0.1,-0.1,0.1,-0.1,0,-0.1,0.1,-0.1,0,-0.1,0,0,0,-0.2,0.1,0,0,-0.2,0.1,0,-0.1,0.1,-0.1,0,0,-0.1,0.1,-0.1,0,-0.1,-0.2,0.1,0,-0.1,0.1,-0.2,-0.1,0.1,0,0,-0.1,-0.1,-0.1,0,-0.1,-0.1,0,0,0.1,0,0,-0.2,0.1,0" class="s3_7">hold 69 (like strings). The updated constructor relied upon the head’s and tail’s new </text>
+<text x="110" y="310" dx="0,-0.1,0.1,0,-0.1,0,0.1,-0.1,0,0,-0.1,-0.2,0.1,0,-0.2,0.1,0,0,0,-0.2,0.1,0.1,0,-0.2,0.1,0.1,-0.1,-0.1,0.1,0,-0.2,0,0.1,0,-0.2,0.1,0,0,0.1,-0.2,0,-0.1,0,0,0,-0.2,0.1,0,0,0,-0.1,0,0,-0.2,0.1,0.1,-0.3,0.1,0,-0.1,0.1,-0.2,0,0.1,-0.2,0.1,-0.1,0,0,0,0,0,0,0.1,0,-0.1,-0.2,-0.1,0.1,-0.1,-0.1,0,0,-0.1,0" class="s3_7">default cases of Null Pointer so no constructor was need, hence it was left empty as </text>
+<text x="110" y="330" dx="0,0,0.1,0.1,-0.1,-0.2,0,-0.1,0,0,0,0,-0.2,0,0.1,0,0,0,-0.3,0.1,-0.1,0.1,-0.2,-0.1" class="s3_7">seen in figure 9 below. </text>
+<text x="110" y="551" dx="0,-0.1,0,-0.1,0,0,-0.1,0,0.1,0,0,0.1,0,-0.1,0,0,-0.1,0,0,-0.2,-0.1,0,0,0.1,-0.1,-0.1,0.1,-0.2,0.1,0,-0.2,0.1,-0.1,0,-0.1,0,0,-0.2,0" class="s2_7">Copy Constructor &amp; Assignment Operator </text>
+<text x="110" y="592" dx="0,0,-0.1,0.1,0,-0.1,0,0.1,0,0.1,-0.1,-0.2,0.1,0,-0.1,0.1,-0.1,0,0,-0.1,0.1,-0.2,0,-0.1,0,0,0,-0.1,0.1,0,0,-0.2,0,0,-0.1,0,0,0.1,-0.3,0,0.1,-0.1,0,-0.1,-0.2,0.1,0,-0.1,0.1,-0.1,-0.1,0,-0.1,-0.1,-0.1,0,-0.1,-0.1,0,0,0,0.1,0,0,-0.1,-0.2,0,0,-0.2,-0.1,0.1,0,-0.1,-0.1,0,0,0,-0.1,0,-0.1,0,-0.1,0.1,-0.1,0,-0.2,0.1,0,-0.1" class="s3_7">The original copy constructor just copied the head and tail of a list, this did not work </text>
+<text x="110" y="612" dx="0,-0.1,-0.1,0,-0.1,0,0,0.1,0,0,-0.2,0.1,0,-0.1,0,0,0,0,-0.1,-0.1,0,-0.2,0,0.1,-0.3,0,0,-0.1,0,0,0,0,-0.2,0.1,0.1,-0.1,-0.1,0,-0.1,-0.1,-0.2,0.1,0,-0.1,0,0,0,-0.1,0,0,0.1,-0.1,0,-0.1,-0.2,0.1,0,0,-0.1,0,-0.2,0.1,0,-0.1,0,-0.1,-0.2,-0.1,0,-0.1,0.1,0,-0.1,-0.1,0.1,0,0,-0.1,-0.2,0.1,-0.1,-0.1" class="s3_7">at all. The original copy assignment however was on the correct track, the intent </text>
+<text x="110" y="632" dx="0,-0.1,0.1,-0.1,0,-0.1,-0.1,0,0.1,-0.1,0,-0.1,-0.2,0.1,-0.1,-0.1,0,-0.1,-0.1,0,-0.1,-0.1,0,0.1,0,0,-0.1,0.1,-0.1,0.1,-0.1,0,-0.1,0,0,-0.1,-0.1,0.1,-0.2,0,0,0,-0.2,0.1,-0.1,-0.1,0,0,0,0,-0.1,0,-0.1,-0.1,-0.1,0,-0.2,0.1,-0.1,0,-0.1,0,0,-0.1,0,-0.2,-0.1,-0.1,0,0,0,-0.1,-0.1,0,-0.1,-0.1,0.1,-0.1,-0.1,0.1,0,-0.2,0,0,0,-0.1" class="s3_7">behind each operation of deleting the current list and replacing it with another list </text>
+<text x="110" y="653" dx="0,0,-0.1,0,0,0,-0.1,0,-0.2,0.1,0,-0.1,0,-0.1,0,-0.1,0,-0.1,0,-0.1,0,-0.2,0.1,-0.1,0,0,0.1,0,-0.1,-0.2,0,-0.1,0,-0.1,0,-0.1,0,-0.1,-0.1,0,0.1,0,-0.3,-0.1,0,-0.1,0,0,0.1,-0.2,0.1,0,0,-0.1,-0.1,0.1,-0.1,-0.1,0.1,0,0,-0.2,0.1,-0.2,-0.1,0,0,-0.1,0.1,-0.1,0,-0.1,0,-0.1,-0.1,0,0.1,-0.1,-0.2,0,-0.1,0,-0.1,-0.1,0.1" class="s3_7">was correct but did not work in practice because of needless overcomplication in the </text>
+<text x="110" y="673" dx="0,-0.1,0,0.1,0,0,-0.2,0.1,0.1,-0.2,0,-0.1,0.1,0,-0.2,0.1,0,0,-0.1,-0.1,-0.1,0,0,0,0.1,-0.1,0,-0.1,0,-0.2,0,-0.1,0.1,0,0,-0.2,0,0,-0.1,0,0,-0.1,-0.1,0,0.1,-0.1,0,-0.1,-0.1,0.1,-0.2,0,0.1,-0.1,0,0,-0.1,0,-0.2,0,0,-0.2,-0.1,0.1,-0.1,-0.1,0,0.1,-0.1,-0.1,0,-0.1,-0.1,0.1,0,0,0,-0.1,0" class="s3_7">program. The new copy constructor just called the copy assignment operator for </text>
+<text x="110" y="694" dx="0,0,0,0.1,-0.1,-0.1,0,-0.1,0,-0.1,0,0,-0.1,-0.1,-0.1,0,-0.1,-0.1,0.1,0,-0.1,-0.1,0,0,0,0.1,-0.1,0,0,-0.2,0,0,0,0,-0.2,0.1,0.1,-0.1,-0.1,-0.2,-0.1,-0.1,0.1,0,-0.1,-0.1,0.1,0,0,0,0,-0.2,0.1,-0.1,0,-0.1,-0.1,0.1,-0.2,0.1,0,-0.2,0.1,0,0,-0.1,0,0,-0.1,0,0,0,0,-0.1,0,-0.1,-0.1,0.1,-0.2,0.1,0,-0.1" class="s3_7">simplicity and the new copy assignment operator fixed the minor errors in the old </text>
+<text x="110" y="714" dx="0,0,0.1,-0.1,0,-0.2,0.1,-0.1,0.1,0,-0.1,-0.2,0.1,0,0,-0.1,-0.1,-0.1,-0.1,0,-0.2,-0.1,0,0,0,-0.1,-0.1,-0.1,-0.1,0.1,-0.1,0,0,0.1,0,0,0.1,-0.1,-0.2,0.1,0,-0.2,-0.1,0.1,0,0,0,-0.1,0,0,-0.1,-0.1,-0.1,-0.2,0.1,0,-0.2,0.1,0,0,-0.1,0,0,-0.2,0,-0.1,-0.1,0,-0.1,0.1,0,0,-0.1,0.1,-0.1,0,0,-0.1" class="s3_7">copy operator (and was updated for other design changes). This can be seen in </text>
+<text x="110" y="735" dx="0,0,0,0,0,-0.2,0.1,0,0,0,0,-0.1,-0.1,-0.1,0,0,0,-0.1" class="s3_7">figure 10 and 11. </text>
+<image preserveAspectRatio="none" x="277" y="798" width="242" height="86" xlink:href="7/img/1.png" />
+<image preserveAspectRatio="none" x="110" y="798" width="176" height="88" xlink:href="7/img/2.png" />
+<image preserveAspectRatio="none" x="110" y="355" width="495" height="102" xlink:href="7/img/3.png" />
+<image preserveAspectRatio="none" x="633" y="355" width="176" height="75" xlink:href="7/img/4.png" />
+<path fill-rule="evenodd" d="M110,463.4H604.7v32H110v-32Z" class="g0_7" />
+<text x="110" y="476" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,-0.1,0.1,0.1" class="s4_7">Figure 8: </text>
+<text x="177" y="476" dx="0,0,0,0,-0.1,0,0,0,0,0.1,0,-0.1,-0.1,0,-0.1,0,-0.1,0.1,0.1,0,0,0.1,-0.1,0,-0.1,0,-0.1,0,0,0.1,-0.1,0,0,0.1,0,0,0.2,-0.1,0,0" class="s5_7">Original default constructor for List . </text>
+<path fill-rule="evenodd" d="M633.2,437.3H809v65.5H633.2V437.3Z" class="g0_7" />
+<text x="633" y="450" dx="0,0,0.1,-0.1,0.1,-0.1,0,0,0" class="s6_7">Figure 9:</text>
+<text x="699" y="450" dx="0,0,-0.1,0" class="s7_7">New </text>
+<text x="633" y="467" dx="0,0,0,0,0.1,-0.1,0,-0.1,0,-0.1,0,0,0,0.1,0,0,0,0,0,0.1,0,0.1,0.1,0,-0.1,-0.1,-0.1" class="s7_7">constructor, which is left </text>
+<text x="633" y="484" dx="0,-0.1,0.1,0,-0.1,0.1,0.1,0,0,0.1,0,-0.1,0,0,0,0.1,-0.1,-0.2" class="s7_7">empty on purpose. </text>
+<image preserveAspectRatio="none" x="110" y="883" width="408" height="191" xlink:href="7/img/5.png" />
+<image preserveAspectRatio="none" x="525" y="798" width="299" height="275" xlink:href="7/img/6.png" />
+<path fill-rule="evenodd" d="M110,1067.2H525.9V1100H110v-32.8Z" class="g0_7" />
+<text x="110" y="1080" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,0,-0.1,0,0.1" class="s4_7">Figure 10: </text>
+<text x="182" y="1080" dx="0,0,0,0,-0.1,0,0,0,0,0.1,0,0,0,0.1,0,-0.2,0,0,0,0,-0.1,0.1,0,0,0,0.1,0.1,0,0,0,0.1,-0.1,0,-0.1,0,-0.1,0,0,0.1,0,0,0.2,0.1,0,0,0,0.1" class="s5_7">Original non-working copy constructor and copy </text>
+<text x="110" y="1097" dx="0,0,0.1,0.1,0,-0.1,0,0.1,-0.1,0,-0.1,0.1,0,0,-0.1,0,0,-0.1,0,0,0.2" class="s5_7">assignment operator. </text>
+<path fill-rule="evenodd" d="M524.9,1067.3H824.2V1100H524.9v-32.7Z" class="g0_7" />
+<text x="524" y="1080" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,-0.1,-0.1,-0.1,0.1" class="s4_7">Figure 11: </text>
+<text x="593" y="1080" dx="0,0,-0.1,0,0.1,0,0,0,0.1,0.1,0,0.1,0.1,0,-0.1,-0.1,0.1,-0.1,0,-0.1,0.1,0,0,-0.1,0,0,-0.1,0,0,0" class="s5_7">New copy assignment operator. </text>
+<text x="524" y="1097" dx="0,0,0,0,0.1,0.1,0,0,0,0.1,-0.1,0,-0.1,0,-0.1,0,0,0.1,0.1,0,0.1,0,0,0.1,0.1,-0.2,0,0,0,-0.1,0,0.1,-0.1,0,0,0.1,0" class="s5_7">Copy constructor simply called this. </text>
+
+
+<!-- Any embedded fonts defined here -->
+<style type="text/css" ><![CDATA[
+
+@font-face {
+	font-family: Montserrat-Bold_22;
+	src: url("fonts/Montserrat-Bold_22.woff") format("woff");
+}
+
+@font-face {
+	font-family: Calibri_9z;
+	src: url("fonts/Calibri_9z.woff") format("woff");
+}
+
+@font-face {
+	font-family: Montserrat-Regular_a1;
+	src: url("fonts/Montserrat-Regular_a1.woff") format("woff");
+}
+
+@font-face {
+	font-family: Montserrat-BoldItalic_2t;
+	src: url("fonts/Montserrat-BoldItalic_2t.woff") format("woff");
+}
+
+@font-face {
+	font-family: Montserrat-Italic_2s;
+	src: url("fonts/Montserrat-Italic_2s.woff") format("woff");
+}
+
+]]></style>
+
+</svg>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+
+<!-- Page 6 -->
+<svg x="0" y="0" width="935" height="1210" viewBox="0 0 935 1210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+style="display: block;margin-left: auto;margin-right: auto;">
+<defs>
+
+<style type="text/css"><![CDATA[
+text { white-space: pre; }
+path, image { pointer-events: none; }
+
+.s1_6{
+font-size: 16.87px;
+font-family: Calibri_9z;
+fill: #000000;
+}
+.s2_6{
+font-size: 13.75px;
+font-family: Montserrat-Bold_22;
+fill: #000000;
+}
+.s3_6{
+font-size: 13.75px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+
+.g0_6{
+fill: #FFFFFF;
+}
+
+]]></style>
+
+</defs>
+<path d="M0,0
+L0,1210
+L935,1210
+L935,0 Z " 
+fill="#FFFFFF" stroke="none" />
+<text x="463" y="1130" dx="0,-0.1" class="s1_6">4 </text>
+<image preserveAspectRatio="none" x="429" y="110" width="443" height="302" xlink:href="6/img/1.png" />
+<image preserveAspectRatio="none" x="429" y="412" width="443" height="79" xlink:href="6/img/2.png" />
+<image preserveAspectRatio="none" x="70" y="939" width="337" height="129" xlink:href="6/img/3.png" />
+<image preserveAspectRatio="none" x="70" y="767" width="337" height="172" xlink:href="6/img/4.png" />
+<image preserveAspectRatio="none" x="70" y="110" width="337" height="657" xlink:href="6/img/5.png" />
+<image preserveAspectRatio="none" x="429" y="487" width="443" height="580" xlink:href="6/img/6.png" />
+<path fill-rule="evenodd" d="M69.2,1067.5H409.3v48.8H69.2v-48.8Z" class="g0_6" />
+<text x="69" y="1080" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,-0.1,0" class="s2_6">Figure 6:</text>
+<text x="135" y="1080" dx="0,0,0,0,-0.1,0,0,0,0,0,0,0,0,-0.1,0,-0.1,0,0,-0.1,0,-0.1,0.1,0,0,0.1,-0.1,0,-0.1,0,0,0" class="s3_6">Original independent insertion </text>
+<text x="69" y="1097" dx="0,0.1,-0.1,-0.1,0,0,0,0.1,0" class="s3_6">methods. </text>
+<path fill-rule="evenodd" d="M428,1067.6H871.3v32H428v-32Z" class="g0_6" />
+<text x="428" y="1080" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,-0.1,0.1" class="s2_6">Figure 7:</text>
+<text x="494" y="1080" dx="0,-0.1,0,0,0,-0.1,-0.1,0.1,0.1,0,0.1,-0.1,0,-0.1,0,0,0,0.1,0.1,-0.1,-0.1,0,0,0,0.1,0.1,0,0,0,0.1,0,-0.1,0,0.1,0,0,-0.1,0.1,-0.1,0,0,0,0.1,-0.1,0,0.1,-0.1,0,-0.1,0,0.1,0" class="s3_6">Update Insertion methods all relying upon Insert(). </text>
+
+
+<!-- Any embedded fonts defined here -->
+<style type="text/css" ><![CDATA[
+
+@font-face {
+	font-family: Montserrat-Bold_22;
+	src: url("fonts/Montserrat-Bold_22.woff") format("woff");
+}
+
+@font-face {
+	font-family: Calibri_9z;
+	src: url("fonts/Calibri_9z.woff") format("woff");
+}
+
+@font-face {
+	font-family: Montserrat-Regular_a1;
+	src: url("fonts/Montserrat-Regular_a1.woff") format("woff");
+}
+
+]]></style>
+
+</svg>

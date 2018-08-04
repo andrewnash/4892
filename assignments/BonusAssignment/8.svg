@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+
+<!-- Page 8 -->
+<svg x="0" y="0" width="935" height="1210" viewBox="0 0 935 1210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+style="display: block;margin-left: auto;margin-right: auto;">
+<defs>
+
+<style type="text/css"><![CDATA[
+text { white-space: pre; }
+path, image { pointer-events: none; }
+
+.s1_8{
+font-size: 16.87px;
+font-family: Calibri_9z;
+fill: #000000;
+}
+.s2_8{
+font-size: 16.87px;
+font-family: Montserrat-Bold_22;
+fill: #000000;
+}
+.s3_8{
+font-size: 16.87px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+.s4_8{
+font-size: 13.75px;
+font-family: Montserrat-Bold_22;
+fill: #000000;
+}
+.s5_8{
+font-size: 13.75px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+
+.g0_8{
+fill: #FFFFFF;
+}
+
+]]></style>
+
+</defs>
+<path d="M0,0
+L0,1210
+L935,1210
+L935,0 Z " 
+fill="#FFFFFF" stroke="none" />
+<text x="463" y="1130" dx="0,-0.1" class="s1_8">6 </text>
+<text x="109" y="126" dx="0,0,-0.1,0,0,0,-0.1,0,-0.1,0,0,0.1,0,-0.1,0,-0.2,0.1,0,0,-0.2,-0.1,0,0,0.1,-0.1,-0.1,0.1,-0.2,0.1,0,-0.2,0.1,-0.1,0,-0.1,0,0,-0.2,0" class="s2_8">Move Constructor &amp; Assignment Operator </text>
+<text x="109" y="166" dx="0,0.1,-0.1,0.1,0,0,-0.2,0,0,-0.1,0.1,0,-0.1,-0.1,0.1,-0.2,0,0.1,-0.1,0,-0.2,0,-0.1,-0.1,0,-0.1,0,0,0,-0.1,0.1,0,0,-0.1,-0.1,-0.1,0,-0.1,0,-0.2,0,0,-0.2,0.1,0.1,-0.1,-0.1,-0.2,0.1,-0.1,0.1,0,-0.1,-0.2,0.1,0,0.1,0,-0.1,-0.2,0.1,0,-0.2,-0.1,0,-0.1,0.1,0,-0.1,0,-0.2,0.1,-0.2,0.1,-0.1,0,0.1" class="s3_8">Similar to the copy constructor and assignment operator, the respective move </text>
+<text x="109" y="187" dx="0,0,0.1,-0.1,0,-0.1,0,-0.2,0,-0.1,0.1,0,0,-0.1,-0.1,-0.1,0,0.1,-0.3,0.1,-0.2,-0.1,-0.1,0.1,0,0,0,-0.1,0,0,0,-0.1,-0.1,-0.1,-0.1,0.1,-0.3,0.1,0,0,-0.2,-0.1,0,0.1,0,0.1,-0.2,0.1,-0.1,-0.1,0.1,0,-0.1,0.1,-0.2,0.1,0,0.1,-0.3,0.1,0,-0.1,-0.2,0.1,0,0,0,-0.1,0,0,-0.2,0.1,0.1,-0.3,0.1,0.1,-0.2,0,0.1,0" class="s3_8">constructor and operator was updated. The original move operator was needlessly </text>
+<text x="109" y="207" dx="0,0,-0.1,0.1,-0.1,0,-0.1,0,-0.1,-0.1,0.1,-0.1,0,-0.1,-0.1,-0.1,0,0,-0.1,0,-0.2,0,0.1,-0.1,0,-0.1,0.1,-0.1,0,0,-0.2,0.1,-0.1,-0.1,0,0,0,-0.1,0,0,-0.1,-0.2,-0.1,0,-0.1,0,0,-0.1,-0.1,0,-0.1,-0.1,-0.1,-0.1,0,0.1,0,0.1,0,0,0,-0.1,-0.1,-0.1,0.1,-0.1,0.1,-0.2,0.1,-0.1,-0.1,0.1,-0.2,0.1,-0.1,0.1" class="s3_8">complicated and was reduced greatly by taking advantage of std::move(). See </text>
+<text x="109" y="228" dx="0,0,-0.1,-0.1,-0.1,0,0.1,0,0,0,-0.1,0,-0.2,0,0,0,-0.2,0.1,0,0,-0.1,0,-0.2,-0.1,-0.1,0,0,0,0,-0.1,0.1,0,-0.1,0,-0.1" class="s3_8">changes in figure 12 and 13 below. </text>
+<text x="110" y="662" dx="0,0,0.1,-0.1,0,-0.2" class="s2_8">Erase </text>
+<text x="110" y="703" dx="0,-0.1,0,-0.1,-0.1,0,0.1,0,0,-0.1,-0.1,0.1,-0.2,0.1,0,-0.1,-0.2,0.1,-0.2,0.1,0.1,-0.1,-0.2,0.1,-0.1,0,0,-0.1,0,0,0,-0.1,-0.1,-0.1,-0.1,0.1,-0.1,0,-0.1,0.1,0,-0.2,-0.1,-0.1,0,0.1,-0.1,0,0,0,-0.2,0.1,0,-0.1,0,0,-0.1,0,-0.2,0.1,-0.2,0.1,0,-0.1,-0.1,-0.1,0,-0.1,0,-0.1,0,-0.1,0,0,0.1,0,-0.2,0.1,0,-0.1" class="s3_8">Finally the erase method was updated to not only work in general, but also work </text>
+<text x="110" y="725" dx="0,0,0,-0.1,-0.1,0,0,-0.1,-0.1,-0.1,-0.1,0.1,-0.1,0,-0.1,0.1,-0.1,-0.1,0.1,0,-0.1,-0.1,0.1,0,-0.1,-0.1,-0.1,0,-0.1,0,0.1,-0.1,-0.2,0.1,0,0,-0.1,0,-0.1,0.1,0,-0.1,-0.2,0.1,0,0,-0.1,0.1,0,-0.1,-0.1,0.1,0,-0.3,0,-0.1,0,0,-0.1,0,0,0,-0.1,0.1,-0.3,0.1,0,0.1,-0.1,-0.3,0.1,0,-0.1,-0.1,0,0" class="s3_8">with updated code. The addition of a pointer to the previous node made this </text>
+<text x="110" y="747" dx="0,0.1,0.1,-0.1,-0.2,0.1,-0.1,0,0.1,0,-0.1,0.1,-0.2,0.1,-0.1,-0.1,0,-0.1,-0.1,0,-0.2,0,0,-0.1,0.1,0,-0.1,-0.1,0,0,-0.1,-0.1,-0.1,0,0.1,-0.1,0,-0.1,0.1,-0.2,0.1,0,0,-0.2,0,0,0,0,-0.1,-0.1,0,-0.1,0.1,0,-0.2,-0.1,0.1,-0.1,0,-0.1,0.1,-0.1,0.1,0,-0.2,-0.1,-0.1,0,0,0,0,0,0,0.1,0,-0.2,0,0,-0.1,-0.1,-0.1,0,0,0,-0.1" class="s3_8">method exponentially shorter and easier. This can be seen below in figure 14 and 15. </text>
+<image preserveAspectRatio="none" x="211" y="251" width="242" height="86" xlink:href="8/img/1.png" />
+<image preserveAspectRatio="none" x="110" y="321" width="342" height="231" xlink:href="8/img/2.png" />
+<image preserveAspectRatio="none" x="485" y="251" width="302" height="137" xlink:href="8/img/3.png" />
+<image preserveAspectRatio="none" x="485" y="385" width="301" height="167" xlink:href="8/img/4.png" />
+<path fill-rule="evenodd" d="M110,564.3H460.6v48.8H110V564.3Z" class="g0_8" />
+<text x="110" y="577" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,0,-0.1,0,0.1" class="s4_8">Figure 12: </text>
+<text x="181" y="577" dx="0,0,0,0,-0.1,0,0,0,0,0.1,0.1,0,0.1,-0.1,0.1,0,0.1,0.1,0,-0.1,0,0.1,-0.1,0,-0.1,0.1,0,0,-0.1,0,0,-0.1,0,0,0.1,0,0,0" class="s5_8">Original Move assignment operator and </text>
+<text x="110" y="594" dx="0,0,0,0,0.1,-0.1,0,-0.1,0,-0.1,0,0,0.2" class="s5_8">constructor. </text>
+<path fill-rule="evenodd" d="M488.1,560.9H745.2v65.5H488.1V560.9Z" class="g0_8" />
+<text x="488" y="574" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,0,-0.1,-0.1,0.1" class="s4_8">Figure 13: </text>
+<text x="559" y="574" dx="0,0,-0.1,0,0.1,0.1,0,0.1,0,0,0,-0.1,0,-0.1,0,0.1,0.1,0,0.1,-0.1" class="s5_8">New simplified Move </text>
+<text x="488" y="590" dx="0,0,0.1,0.1,0,-0.1,0,0.1,-0.1,0,-0.1,0.1,0,0,-0.1,0,0,-0.1,0,0,0.1,0,0,0" class="s5_8">assignment operator and </text>
+<text x="488" y="607" dx="0,0,0,0,0.1,-0.1,0,-0.1,0,-0.1,0,0" class="s5_8">constructor.</text>
+<image preserveAspectRatio="none" x="110" y="251" width="247" height="87" xlink:href="8/img/5.png" />
+<image preserveAspectRatio="none" x="107" y="777" width="337" height="179" xlink:href="8/img/6.png" />
+<image preserveAspectRatio="none" x="464" y="776" width="347" height="181" xlink:href="8/img/7.png" />
+<path fill-rule="evenodd" d="M107.3,962.8H444.6v32.1H107.3V962.8Z" class="g0_8" />
+<text x="107" y="976" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,0,-0.1,0,0.1" class="s4_8">Figure 14: </text>
+<text x="180" y="976" dx="0,0,0,0,-0.1,0,0,0,0,0.1,-0.1,0,0,0.1,-0.1,0.1,0.1,0.1,0.1,-0.1,-0.1,0,0,0,0" class="s5_8">Original erase() method. </text>
+<path fill-rule="evenodd" d="M464.1,964.1H811.3v48.8H464.1V964.1Z" class="g0_8" />
+<text x="464" y="977" dx="0,0,0.1,0.1,0.1,-0.1,-0.1,0,-0.1,0.1,0.1" class="s4_8">Figure 15: </text>
+<text x="535" y="977" dx="0,0,-0.1,0,0.1,-0.1,0,0,0.1,-0.1,0.1,0.1,-0.1,0.1,-0.1,-0.1,0,0,0,0.1,-0.1,0,0,0,0,-0.1,0.1,0,0,0.1,0,0,-0.1,0,-0.1,-0.1" class="s5_8">New erase() method taking advantage </text>
+<text x="464" y="994" dx="0,0,-0.1,0.1,0,0,0.1,0,0,-0.1,0.1,0,0.1,0,0,0,0,-0.1,-0.1,0,0.1,-0.1,0,0.1,-0.1,0,-0.1,0.1,0,0,-0.1,0.1,0,0,-0.1,0.1,0.1,0,0,0,-0.1,0" class="s5_8">of having a pointer to the previous node. </text>
+
+
+<!-- Any embedded fonts defined here -->
+<style type="text/css" ><![CDATA[
+
+@font-face {
+	font-family: Montserrat-Bold_22;
+	src: url("fonts/Montserrat-Bold_22.woff") format("woff");
+}
+
+@font-face {
+	font-family: Calibri_9z;
+	src: url("fonts/Calibri_9z.woff") format("woff");
+}
+
+@font-face {
+	font-family: Montserrat-Regular_a1;
+	src: url("fonts/Montserrat-Regular_a1.woff") format("woff");
+}
+
+]]></style>
+
+</svg>

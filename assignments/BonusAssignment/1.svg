@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+
+<!-- Page 1 -->
+<svg x="0" y="0" width="935" height="1210" viewBox="0 0 935 1210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+style="display: block;margin-left: auto;margin-right: auto;">
+<defs>
+
+<style type="text/css"><![CDATA[
+text { white-space: pre; }
+path, image { pointer-events: none; }
+
+.s1_1{
+font-size: 30.62px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+.s2_1{
+font-size: 13.75px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+.s3_1{
+font-size: 16.87px;
+font-family: Montserrat-Regular_a1;
+fill: #000000;
+}
+
+
+]]></style>
+
+</defs>
+<path d="M0,0
+L0,1210
+L935,1210
+L935,0 Z " 
+fill="#FFFFFF" stroke="none" />
+<text x="321" y="357" dx="0,0,0.1,0,-0.1,-0.1,0,-0.1,0.1,0.1,-0.2,-0.1,0,0,0,0" class="s1_1">Bonus Assignment</text>
+<text x="366" y="378" dx="0,0,0.1,0,0,0.1,-0.1,0.1,0,-0.1,0.1,0,0,0,0,0,-0.1,0.1,0.1,0,0.1,0,0,-0.1,0,0.1,0,0,-0.1,-0.1,0" class="s2_1">A List of problems, with List.h</text>
+<text x="410" y="721" dx="0,0,-0.1,-0.1,0,0.1,0,-0.2,0,-0.1,0" class="s3_1">Andrew Nash</text>
+<text x="422" y="742" class="s3_1">201609492</text>
+<text x="414" y="763" dx="0,0,0,0,0,0,0,0,-0.2,0,0" class="s3_1">03-Aug-2018</text>
+
+
+<!-- Any embedded fonts defined here -->
+<style type="text/css" ><![CDATA[
+
+@font-face {
+	font-family: Montserrat-Regular_a1;
+	src: url("fonts/Montserrat-Regular_a1.woff") format("woff");
+}
+
+]]></style>
+
+</svg>

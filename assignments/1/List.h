@@ -16,6 +16,7 @@
 
 #include <iostream>
 #include <cstdint>
+#include <memory>
 
 using namespace std;
 
@@ -24,47 +25,32 @@ template<typename T>
 class List
 {
 public:
-    class Node //holds node values
 
+    class Node
     {
     public:
-        Node(Node *nex_, T key_)
-            {
-            nex = nex_;
-            key = key_;
-        }
-
-        Node* get_nex()
+        Node( std::shared_ptr<Node> prev_,
+              std::shared_ptr<Node> next_,
+              T key_)
         {
-            return nex;
+            next = std::move(next_);
+            prev = std::move(prev_);
+            key = std::move(key_);
         }
 
-        T& get_key()
-        {
-            return key;
-        }
-
-        void write_key(T newKey)
-        {
-            key = newKey;
-        }
-
-        void write_nex(Node* newNex)
-        {
-            nex = newNex;
-        }
-
-    private:
-        Node *nex;
+        std::shared_ptr<Node> next;
+        std::shared_ptr<Node> prev;
         T key;
     };
+
+
     //! A constant iterator over elements of the List.
     class const_iterator
     {
     public:
-        const_iterator(Node *ptr) //itr of node
+        const_iterator(std::shared_ptr<Node> node) //itr of node
         {
-            itr = ptr;
+            current = node;
         }
 
         /**
@@ -72,9 +58,9 @@ public:
          *
          * @returns   a reference to the "current" element
          */
-        const T& operator*() 
+        const T& operator*()
         {
-            return this->itr->get_key();
+            return current->key;
         }
 
         /**
@@ -87,7 +73,7 @@ public:
          */
         const_iterator& operator++()
         {
-            itr = itr->get_nex();
+            current = current->next;
             return *this;
         }
 
@@ -107,24 +93,29 @@ public:
          */
         const_iterator operator++(int ignored)
         {
-            Node *prevNode = itr;
-            itr =  itr->get_nex(); //get itr of next node
+            auto prevNode = *this;
+            current = current->next;
             return prevNode;
         }
 
         //! Is this iterator pointing at the same place as another one?
-        bool operator== (const const_iterator& otherItr) const
+        bool operator== (const const_iterator& other) const
         {
-            return itr == otherItr.itr;
+            return current == other.current;
         }
 
         //! Is this iterator pointing at a different place from another?
-        bool operator!= (const const_iterator& otherItr) const
+        bool operator!= (const const_iterator& other) const
         {
-            return itr != otherItr.itr;
+            return current != other.current;
         }
-    protected:
-        Node* itr;
+
+        T get_node()
+        {
+            return current->key;
+        }
+
+        std::shared_ptr<Node> current = nullptr;
 
     };
 
@@ -132,100 +123,108 @@ public:
     class iterator : public const_iterator
     {
     public:
-        iterator(Node* ptr):const_iterator(ptr)
-        {}
+        iterator(std::shared_ptr<Node> node):const_iterator(node)
+        {
+            current = node;
+        }
 
         // Non-const overloads of const_iterator methods:
         T& operator*()
         {
-            return this->itr->get_key();
+            return current->key;
         }
         iterator& operator++()
         {
-            this->itr = this->itr->get_nex(); 
+            current = current->next;
             return *this;
         }
         iterator operator++(int ignored)
         {
-            Node *prevNode = this->itr;
-            this->itr =  this->itr->get_nex();
+            auto prevNode = *this;
+            current = current->next;
             return prevNode;
         }
 
-        Node* get_node()
+        //! Is this iterator pointing at the same place as another one?
+        bool operator== (const const_iterator& other) const
         {
-            return this->itr;
+            return current == other.current;
         }
+
+        //! Is this iterator pointing at a different place from another?
+        bool operator!= (const const_iterator& other) const
+        {
+            return current != other.current;
+        }
+
+        std::shared_ptr<Node> current;
     };
 
 
     //! Default constructor
     List()
     {
-        tail = new Node(nullptr, 69); //these 69s are a last minute hack so it works
-        head = new Node(tail, 69);
     }
 
 
     //! Copy constructor
-    List(const List& otherList)
+    List(const List& other)
     {
-        head = otherList.head;
-        tail = otherList.tail;
+        *this = other;
     }
 
     //! Move constructor
-    List(List&& otherList)
+    List(List&& other)
     {
-        head = otherList.head;
-        tail = otherList.tail;
+        head = std::move(other.head);
+        tail = std::move(other.tail);
+        size_ = other.size_;
     }
 
     //! Destructor
     ~List()
     {
-        Node *currentNode = head;
-        while(currentNode != tail)
-        {
-            Node *nextNode = currentNode->get_nex();
-            delete currentNode;
-            currentNode = nextNode;
-        }
+//        auto i = head;
+//        while(i->next)
+//        {
+//            i->prev = nullptr;
+//        }
+//        head, tail = nullptr;
     }
 
     //! Copy assignment operator
-    List& operator= (const List& otherList)
+    List& operator= (const List& other)
     {
-        Node *myListLocation = begin()->get_nex(); //get start
-        Node *otherListLocation = otherList.begin();
-        while(myListLocation != end())
+        //empty this list
+       auto thisList = head;
+       if(thisList)
+       {
+           while(thisList->next)
+           {
+               thisList->prev = nullptr;
+           }
+           head, tail = nullptr;
+       }
+
+       //fill this list with other list
+        std::shared_ptr<Node> i = other.head;
+        for(auto j = other.begin(); j != other.end(); j++)
         {
-            myListLocation = myListLocation->get_nex(); //delete each value 1 by 1
-            delete myListLocation;
+            T temp = i->key;
+            push_back(temp);
+            i = i->next;
         }
-        while(otherListLocation != end())
-        {
-            push_back(otherListLocation->get_key()); //push back values to match new list
-            otherListLocation = otherListLocation->get_nex();
-        }
+        return *this;
     }
 
     //! Move assignment operator
-    List& operator= (List&& otherList)
+    List& operator= (List&& other)
     {
-        Node *myListLocation = begin()->get_nex();
-        Node *otherListLocation = otherList.begin();
-        while(myListLocation != end())
-        {
-            myListLocation = myListLocation->get_nex(); //delete each value 1 by 1
-            delete myListLocation;
-        }
-        while(otherListLocation != end())
-        {
-            push_back(otherListLocation->get_key()); //push back values to match new list
-            otherListLocation = otherListLocation->get_nex();
-        }
-        delete otherList;
+        head = std::move(other.head);
+        tail = std::move(other.tail);
+        size_ = other.size_;
+
+        return *this;
     }
 
 
@@ -235,24 +234,13 @@ public:
     //! How many elements are in this list?
     size_t size() const
     {
-        std::size_t nodeCount = 0;
-        Node* currentNode = this->head;
-        while(currentNode != nullptr) //itratote through list and count values
-        {
-            currentNode = currentNode->get_nex();
-            nodeCount++;
-        }
-        return nodeCount;
+        return size_;
     }
 
     //! Is this list empty?
     bool empty() const
     {
-        if(size() < 1)
-        {
-            return true;
-        }
-        return false;
+        return size_ == 0;
     }
 
     //! Get an iterator to the beginning of the list
@@ -262,18 +250,17 @@ public:
     }
     const_iterator begin() const
     {
-        return iterator(head);
+        return const_iterator(head);
     }
 
     //! Get an iterator just past the end of the list
     iterator end()
     {
-        return iterator(tail++);
+        return iterator(nullptr);
     }
     const_iterator end() const
     {
-        Node *a = tail;
-        return iterator(a++);
+        return const_iterator(nullptr);
     }
 
 
@@ -283,58 +270,25 @@ public:
     //! Copy an element to the front of the list
     void push_front(const T& data)
     {
-        if(head->get_key() == 69)
-        {
-            head->write_key(data);
-        }
-        Node *newHead = new Node(head, data);
-        head = newHead;
+        insert(begin(), data);
     }
 
     //! Move an element to the front of the list
     void push_front(T&& data)
     {
-        if(head->get_key() == 69)
-        {
-            head->write_key(data);
-        }
-        Node *newHead = new Node(head, std::move(data));
-        head = newHead;
+        insert(begin(), std::move(data));
     }
 
     //! Copy an element to the back of the list
     void push_back(const T& data)
     {
-        if(tail->get_key() == 69)
-        {
-            tail->write_key(data);
-        }
-        else
-        {
-            Node *newNode = new Node(nullptr, data);
-            tail->write_nex(newNode);
-            tail = newNode;
-        }
+        insert(iterator(tail), data);
     }
 
     //! Move an element to the back of the list
     void push_back(T&& data)
     {
-        if(tail->get_key() == 69)
-        {
-            tail->write_key(data);
-        }
-        else
-        {
-            iterator i = begin();
-            while(i.get_node()->get_nex() != tail)
-            {
-                i++;
-            }
-            Node *newNode = new Node(tail, tail->get_key());
-            i.get_node()->write_nex(newNode);
-            tail->write_key(data);
-        }
+        insert(iterator(tail), std::move(data));
     }
 
     /**
@@ -349,13 +303,8 @@ public:
      */
     iterator insert(iterator currentItr, const T& data)
     {
-        iterator beginItr = ++currentItr;
-        Node *nextNode = currentItr.get_node();
-        Node *currentNode = currentItr.get_node();
-        T currentNodeData = currentNode->get_key();
-        Node *newNode = new Node(nextNode, currentNodeData);
-        currentNode->write_key(nextNode);
-        currentNode->write_nex(data);
+        auto temp = data;
+        return insert(currentItr, std::move(temp));
     }
 
     /**
@@ -368,36 +317,69 @@ public:
      *
      * @returns   an iterator pointing at the newly-inserted element
      */
-    iterator insert(iterator currentItr, const T&& data)
+    iterator insert(iterator itr, const T&& data)
     {
-        iterator nextItr = currentItr++;
-        Node *nextNode = nextItr.get_node();
-        Node *currentNode = currentItr.get_node();
-        T currentNodeData = currentNode->get_key();
-        Node *newNode = new Node(nextNode, currentNodeData);
-        currentNode->write_key(nextNode);
-        currentNode->write_nex(data);
-        delete currentItr.get_node();
-        delete data;
-        delete currentItr;
-        currentItr = nullptr;
+        size_++;
+
+        //Create Head
+        if(!head)
+        {
+            head = std::make_shared<Node>(nullptr, tail, std::move(data));
+            return iterator(head);
+        }
+        //Create Tail
+        else if(!tail)
+        {
+            tail = std::make_shared<Node>(head, nullptr, std::move(data));
+            head->next = tail;
+            return iterator(tail);
+        }
+        //Push Back
+        else if(itr.current == tail)
+        {
+            auto newNode = tail;
+            tail.reset(new Node(newNode, nullptr, std::move(data)));
+            newNode->next = tail;
+        }
+        //Push Front
+        else if(itr.current == head)
+        {
+            auto newNode = head;
+            head.reset(new Node(nullptr, newNode, std::move(data)));
+            newNode->prev = head;
+        }
+        //Normal Insert
+        else
+        {
+            auto prev = itr.current->prev;
+            auto next = itr.current;
+
+            auto newNode = std::make_shared<Node>(std::move(prev), 
+                                                std::move(next), 
+                                                std::move(data));
+
+            prev->next = std::move(newNode);
+            next->prev = newNode;
+
+            return iterator(newNode);
+        }
     }
 
     //! Remove an element from an arbitrary location
     void erase(iterator itr)
     {
-        Node *currentNode = itr.get_node();
-        Node *nextNode = currentNode->get_nex();
-        itr.get_node()->write_key(nextNode->get_key());
-        itr.get_node()->write_nex(nextNode->get_nex());
-        delete nextNode->get_nex();
-        nextNode->write_nex(nullptr);
-        delete &itr;
-        itr = nullptr;
+        auto prev = itr.current->prev;
+        auto next = itr.current->next;
+
+        next->prev = prev;
+        prev->next = next;
+
+        size_--;
     }
 
 protected:
     // Add whatever you need to add here
-    Node* head;
-    Node* tail;
+    std::shared_ptr<Node> head = nullptr;
+    std::shared_ptr<Node> tail = nullptr;
+    size_t size_ = 0;
 };
