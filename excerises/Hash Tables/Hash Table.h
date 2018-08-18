@@ -33,7 +33,7 @@ public:
     using RBTree = std::multimap<std::string, std::shared_ptr<vector>>;
 
     //! Add a new vector to the social network.
-    vector::ID addvector(std::string name)
+    vector::ID addname(std::string name)
     {
         std::shared_ptr<vector> newvector = std::make_shared<vector>(vector(name, nextID));
         //tree for later use in find()
@@ -44,19 +44,6 @@ public:
         return nextID++;
     }
 
-    /**
-     * Add a (bidirectional/undirected) friendship link between two vectors.
-     *
-     * @pre the named vectors actually exist in the social network
-     */
-    Hash_Table& addFriendship(vector::ID vector1, vector::ID vector2)
-    {
-        (*vectors[vector1]).addFriend(vectors[vector2]);
-        (*vectors[vector2]).addFriend(vectors[vector1]);
-
-        return *this;
-    }
-
     /** 
      * Retrieve a reference to a specific vector.
      * 
@@ -65,41 +52,13 @@ public:
     const vector& getvector(vector::ID vectorID) const { return *(vectors.at(vectorID)); }
 
 
-    //! An iterator over vectors in the social network
-    struct Iterator
+    void MaxLoad()
     {
-        Iterator(std::shared_ptr<hashTable> vectors) : vectors_(vectors),
-               currentID((*vectors_).begin()), end((*vectors_).end()) {}
-
-        const vector& operator*() { return *(currentID->second); }
-
-        Iterator operator ++ (int)
-        {
-            auto copy = *this;
-            currentID++;
-            return copy;
-        }
-
-        bool operator == (const Iterator& orig) const { return currentID == orig.currentID; }
-
-        bool operator != (const Iterator& orig) const { return currentID != orig.currentID; }
-
-        Iterator makeEnd()
-        {
-            currentID = end;
-            return *this;
-        }
-
-        std::shared_ptr<hashTable> vectors_;
-        hashTable::iterator currentID;
-        hashTable::iterator end;
-    };
-
-    //! Get an iterator over all vectors in the network.
-    Iterator begin() { return Iterator(std::make_shared<hashTable>(vectors)); }
+        unordered_set<T>::max_load_factor();
+    }
 
     //! Find all vectors in the network whose names start with `name`.
-    Iterator find(std::string name)
+    Iterator Hash(std::string name)
     {
         hashTable namedvectors;
         auto i = vectornames.lower_bound(name);
@@ -120,9 +79,6 @@ public:
         }
         return Iterator(std::make_shared<hashTable>(namedvectors));
     }
-
-    //! Get an iterator that signifies the end of any vector iteration.
-    Iterator end() { return Iterator(std::make_shared<hashTable>(vectors)).makeEnd(); }
 
 private:
     vector::ID nextID = 0;
